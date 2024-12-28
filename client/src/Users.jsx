@@ -6,13 +6,13 @@ import axios from 'axios'
 function Users() {
     const [users, setUsers] = useState([])
     useEffect(() => {
-       axios.get('http://localhost:3001/')
+       axios.get('https://crud-d3bd.onrender.com/')
        .then(result => setUsers(result.data))
        .catch(err => console.log(err))    
     }, [])
     
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/deleteUser/'+id)
+        axios.delete('https://crud-d3bd.onrender.com/'+id)
         .then(res => {console.log(res)
             window.location.reload()
         })
